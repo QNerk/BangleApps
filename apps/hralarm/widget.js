@@ -15,6 +15,9 @@
       hitLimit = 0;
       Bangle.buzz(500, 1);
     }
+    if (hitLimit < getTime() && hr.bpm > settings.bottom){
+      hitLimit = getTime() + 10;
+      Bangle.buzz(2000, 1);
   };
   Bangle.on("HRM", checkHr);
   Bangle.on("BTHRM", checkHr);
