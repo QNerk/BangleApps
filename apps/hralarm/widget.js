@@ -7,7 +7,7 @@
       NRF.setAdvertising({},{
       showName:true,
       manufacturer:0x0590,
-      manufacturerData:[0x00,0x01,0x02] // your data here as a series of Bytes
+      manufacturerData:["0000"] // your data here as a series of Bytes
       });
     
     
