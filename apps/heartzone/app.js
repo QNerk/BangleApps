@@ -55,6 +55,11 @@ Bangle.on('HRM', function(hrmInfo) {
   if (!isPaused) {
     var currentTime;
     if (hrmInfo.confidence > settings.minConfidence) {
+      NRF.setAdvertising({},{
+      showName: false,
+      manufacturer: 0x0590,
+      manufacturerData: JSON.stringify({ name: "ALARM" })
+      });
       if (hrmInfo.bpm < settings.minBpm) {
         currentTime = getTime();
         if (currentTime - lastBuzz > settings.minBuzzIntervalSeconds) {
