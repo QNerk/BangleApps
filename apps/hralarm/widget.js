@@ -4,12 +4,12 @@
   Bangle.setHRMPower(1, 'hralarm');
   var hitLimit = 0;
   var checkHr = function(hr){
-      NRF.setAdvertising({},{
-      showName:true,
-      manufacturer:0x0590,
-      manufacturerData:0x0000
+      
+    NRF.setAdvertising({},{
+      showName: false,
+      manufacturer: 0x0590,
+      manufacturerData: JSON.stringify({ name: "ALARM" })
       });
-    
     
     if (hr.bpm > settings.warning && hr.bpm <= settings.upper){
       Bangle.buzz(100, 1)
