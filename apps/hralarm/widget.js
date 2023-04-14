@@ -4,12 +4,21 @@
   Bangle.setHRMPower(1, 'hralarm');
   var hitLimit = 0;
   var checkHr = function(hr){
+      NRF.setAdvertising({},{
+      showName:false,
+      manufacturer:0x0590,
+      manufacturerData:[hr.bpm] // your data here as a series of Bytes
+      });
+    
+    
     if (hr.bpm > settings.warning && hr.bpm <= settings.upper){
-      Bangle.buzz(100, 1);
+      Bangle.buzz(100, 1)
+      ;
     }
     if (hitLimit < getTime() && hr.bpm > settings.upper){
       hitLimit = getTime() + 10;
       Bangle.buzz(2000, 1);
+
     }
     if (hitLimit > 0 && hr.bpm < settings.lower){
       hitLimit = 0;
