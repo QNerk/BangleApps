@@ -5,9 +5,9 @@
   var hitLimit = 0;
   var checkHr = function(hr){
       NRF.setAdvertising({},{
-      showName:false,
+      showName:true,
       manufacturer:0x0590,
-      manufacturerData:[hr.bpm] // your data here as a series of Bytes
+      manufacturerData:[0x00,0x01,0x02] // your data here as a series of Bytes
       });
     
     
