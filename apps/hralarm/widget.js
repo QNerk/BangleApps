@@ -6,7 +6,7 @@
   var checkHr = function(hr)if (hr < 60 || hr > 100) {
       // Send a Bluetooth message if it has been at least 10 seconds since the last alert
       if ((Date.now() - this.lastAlert) > 10000) {
-        var message = "Heart rate out of range: " + hr.toString();
+        var message = "Heart rate out of range: " + checkHr.toString();
         NRF.requestDevice({ filters: [{ namePrefix: 'ESP32' }] })
           .then(function(device) {
             device.gatt.connect()
