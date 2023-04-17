@@ -6,7 +6,6 @@
     upper: 180,
     warning: 170,
     lower: 150,
-    bottom: 40,
   }, require('Storage').readJSON(FILE, true) || {});
 
   function writeSettings() {
@@ -52,17 +51,6 @@
         settings.warning = v;
         writeSettings();
       }
-
-    'Bottom at': {
-      value: settings.bottom,
-      min: 0,
-      step:5,
-      max: 300,
-      onchange: v => {
-        settings.bottom = v;
-        writeSettings();
-      }
-
     }
   });
 })
