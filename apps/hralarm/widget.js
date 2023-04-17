@@ -1,5 +1,5 @@
 var hrAlertWidget = {
-  name: "HR Alert by Q_Nerk",
+  name: "HR Alarm by Q_Nerk",
   width: 24, // Width of widget in pixels
   height: 24, // Height of widget in pixels
   lastAlert: 0,
